@@ -1,20 +1,51 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { capitalize } from "../../utils/helpers";
 
-function Nav() {
+function Nav(props) {
+  const { selections = [], setCurrentSelection, currentSelection } = props;
+
   return (
     <nav>
       <ul className="flex-row">
         <li className="mx-2">
-          <a href="#about-me">About Me</a>
+          <a
+            data-testid="about"
+            href="#about"
+            onClick={() => currentSelection === "about"}
+            className={"navActive"}
+          >
+            About me
+          </a>
         </li>
         <li className="mx-2">
-          <a href="#portfolio">Portfolio</a>
+          <a
+            data-testid="projects"
+            href="#projects"
+            onClick={() => currentSelection === "projects"}
+            className={"navActive"}
+          >
+            Projects
+          </a>
         </li>
         <li className="mx-2">
-          <a href="#contact-me">Contact Me</a>
+          <a
+            data-testid="contact"
+            href="#contact"
+            onClick={() => currentSelection === "contact"}
+            className={"navActive"}
+          >
+            Contact
+          </a>
         </li>
         <li className="mx-2">
-          <a href="#my-resume">Resume</a>
+          <a
+            data-testid="contact"
+            href="#resume"
+            onClick={() => currentSelection === "resume"}
+            className={"navActive"}
+          >
+            Resume
+          </a>
         </li>
       </ul>
     </nav>
