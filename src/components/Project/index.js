@@ -4,6 +4,7 @@ import desk from "../../assests/images/pic.jpg";
 import running from "../../assests/images/hero-bg.jpg";
 import robot from "../../assests/images/robot-clipart.png";
 import laptop from "../../assests/images/laptop.png";
+import book from "../../assests/images/book.png";
 
 function Projects() {
   return (
@@ -12,6 +13,13 @@ function Projects() {
       <div className="container">
         <div className="row">
           <div className="col">
+            <a
+              href="https://cwru-great-reads.herokuapp.com/"
+              className="main-img"
+            >
+              <img src={book} alt="a book" />
+              <div class="bottom-left">GreatReads React/Graphql</div>
+            </a>
             <a
               href="https://zsvoboda87.github.io/Bored-AF/"
               className="main-img"
