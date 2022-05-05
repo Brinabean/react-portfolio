@@ -6,7 +6,15 @@ import Contact from "./components/Contact";
 import Resume from "./components/Resume";
 
 import React, { useState } from "react";
-import PageSelection from "./components/PageSelection";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
+//import PageSelection from "./components/PageSelection";
 
 function App() {
   const [selections] = useState([
@@ -20,12 +28,12 @@ function App() {
   return (
     <div>
       <Header></Header>
-      <main>
-        <About></About>
-        <Projects></Projects>
-        <Contact></Contact>
-        <Resume></Resume>
-      </main>
+      <Switch>
+        <Route exact path="/" component={About} />
+        <Route exact path="/projects" component={Projects} />
+        <Route exact path="/contact" component={Contact} />
+        <Route exact path="/resume" component={Resume} />
+      </Switch>
       <Footer></Footer>
     </div>
   );
